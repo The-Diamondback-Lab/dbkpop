@@ -1,0 +1,19 @@
+﻿@font-face {
+    font-family: Solano-Gothic-Bold;
+    src: url('../fonts/SolanoGothicMVB-Bd.otf');
+}
+
+@font-face {
+    font-family: Solano-Gothic-Bold-Cap;
+    src: url('../fonts/SolanoGothicMVB-BdCap.otf');
+}
+
+@font-face {
+    font-family: Solano-Gothic-Light-SC;
+    src: url('../fonts/SolanoGothicMVB-Sb.otf');
+}
+
+@font-face {
+    font-family: Merriweather;
+    src: url('../fonts/Merriweather-Regular.ttf');
+}

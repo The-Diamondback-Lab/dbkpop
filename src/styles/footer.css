@@ -1,0 +1,20 @@
+﻿footer {
+    font-size: 25px;
+    font-family: 'Solano-Gothic-Bold-Cap';
+    padding: 10px;
+    color: white;
+    background-color: #000;
+}
+
+p.credits {
+    font-size: 1.5em;
+}
+
+footer > * {
+    margin: 10px;
+}
+
+.footer-logo {
+    margin: 0.5em 0;
+    width: 7.5em;
+}
