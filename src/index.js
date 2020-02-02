@@ -34,9 +34,9 @@ class Home extends React.Component {
                         loaded: true,
                         startFadeOut: false
                     })
-                }, 750)
+                }, 1000)
             });
-        }, 500);
+        }, 1000);
     }
 
     render() {
@@ -46,7 +46,7 @@ class Home extends React.Component {
                     loaded={this.state.loaded}
                     startFadeOut={this.state.startFadeOut} />
                 <Helmet>
-                    <title>Little Bus of Horrors</title>
+                    <title>Koreography</title>
                     <link rel='icon' href='favicon.ico' />
                 </Helmet>
 
