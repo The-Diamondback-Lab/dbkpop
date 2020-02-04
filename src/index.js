@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Helmet from 'react-helmet';
+
+
 import Spinner from './components/spinner';
 import Header from './components/header';
 import Content from './components/content';
@@ -41,7 +43,7 @@ class Home extends React.Component {
 
     render() {
         return (
-            <div id='Home'>
+            <div id='Home' style={{ backgroundColor: "rgb(25,25,25)" }}>
                 <Spinner
                     loaded={this.state.loaded}
                     startFadeOut={this.state.startFadeOut} />

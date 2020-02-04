@@ -1,5 +1,6 @@
 import React from 'react';
 import ImageGallery from 'react-image-gallery';
+import YouTube from 'react-youtube-embed';
 import Podcast from './podcast';
 import sanitizeHtml from 'sanitize-html';
 /**
@@ -133,6 +134,10 @@ export default class Content extends React.Component {
             if (para.match(/^PODCAST::/)) {
                 let podcastSrc = para.split('PODCAST::')[1];
                 elems.push(<Podcast key={`podcast-${idx}`} src={podcastSrc} />);
+                return elems;
+            } else if (para.match('YOUTUBE::')) {
+                let youtubeID = para.split('YOUTUBE::')[1];
+                elems.push(<YouTube id={youtubeID} />);
                 return elems;
             } else if (para.match(/^GALLERY::/)) {
                 // Find the gallery index map for this index (if any)
