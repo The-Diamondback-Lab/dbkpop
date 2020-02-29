@@ -1,7 +1,8 @@
 import React from 'react';
-import ImageGallery from 'react-image-gallery';
 import YouTube from 'react-youtube-embed';
 import Podcast from './podcast';
+import AwesomeSlider from 'react-awesome-slider';
+import 'react-awesome-slider/dist/styles.css';
 import sanitizeHtml from 'sanitize-html';
 /**
  * @type {string[]}
@@ -27,6 +28,8 @@ import imageData from '../data/images.json';
  * @property {GalleryData} data
  * @property {JSX.Element[]} galleries
  */
+
+
 
 export default class Content extends React.Component {
     constructor(props) {
@@ -101,13 +104,7 @@ export default class Content extends React.Component {
 
         let galleries = imageSets.map((set, idx) => (
             <div key={`gallery-${idx}`} className='gallery-wrapper'>
-                <ImageGallery
-                    items={set}
-                    lazyLoad={true}
-                    showPlayButton={false}
-                    showFullscreenButton={false}
-                    showIndex={true}
-                />
+
             </div>
         ));
 
@@ -135,7 +132,12 @@ export default class Content extends React.Component {
                 let podcastSrc = para.split('PODCAST::')[1];
                 elems.push(<Podcast key={`podcast-${idx}`} src={podcastSrc} />);
                 return elems;
-            } else if (para.match('YOUTUBE::')) {
+            }
+            if (para.match(/^IMAGE::/)) {
+                let imageSrc = para.split('IMAGE::')[1];
+                elems.push(<img src={imageSrc} class="center"/>);
+                return elems;
+            }else if (para.match('YOUTUBE::')) {
                 let youtubeID = para.split('YOUTUBE::')[1];
                 elems.push(<YouTube id={youtubeID} />);
                 return elems;
@@ -152,10 +154,19 @@ export default class Content extends React.Component {
                 para = `<i>${para.split('PERSON::')[1]}</i>`;
             } else if (para.match(/^BOLD::/)) {
                 para = `<b>${para.split('BOLD::')[1]}</i>`;
+            } else if (para.match('SLIDER::')) {
+                let slideshowPic = JSON.parse(para.split('SLIDER::')[1]);
+                elems.push(<AwesomeSlider bullets={false}>
+                    <div data-src={slideshowPic[0]} />
+                    <div data-src={slideshowPic[1]} />
+                    <div data-src={slideshowPic[2]} />
+                    <div data-src={slideshowPic[3]} />
+                </AwesomeSlider>);
+                return elems;
             } else if (para.match(/^[A-Z]+::/)) {
                 // Unhandled directive, skip over
                 return elems;
-            }
+            } 
 
             elems.push(
                 <p
@@ -170,7 +181,7 @@ export default class Content extends React.Component {
     }
 
     render() {
-        let galleryObjs = this.generateGalleries();
+        let galleryObjs = {};
         let articleContent = this.generateContent(galleryObjs.data, galleryObjs.galleries);
 
         return <div id='article-content'>{articleContent}</div>;
