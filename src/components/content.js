@@ -135,6 +135,7 @@ export default class Content extends React.Component {
             }
             if (para.match(/^IMAGE::/)) {
                 let imageSrc = para.split('IMAGE::')[1];
+                // eslint-disable-next-line jsx-a11y/alt-text
                 elems.push(<img src={imageSrc} className="center"/>);
                 return elems;
             }else if (para.match('YOUTUBE::')) {
