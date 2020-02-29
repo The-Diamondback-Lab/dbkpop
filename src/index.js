@@ -1,63 +1,62 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import Helmet from 'react-helmet';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import Helmet from 'react-helmet'
 
+import Spinner from './components/spinner'
+import Header from './components/header'
+import Content from './components/content'
+import Footer from './components/footer'
 
-import Spinner from './components/spinner';
-import Header from './components/header';
-import Content from './components/content';
-import Footer from './components/footer';
-
-import './styles/main.css';
+import './styles/main.css'
 
 class Home extends React.Component {
-    constructor() {
-        super();
-        this.state = { loaded: false, startFadeOut: false };
-    }
+  constructor () {
+    super()
+    this.state = { loaded: false, startFadeOut: false }
+  }
 
-    componentDidMount() {
-        // After main component finishes mounting, wait 500ms
-        // and change "loaded" to true and "startFadeOut" to true.
-        // This will cause the spinner to start fading out.
-        // This setState will call another timeout (750ms later)
-        // to change the loaded to true and fade out to false,
-        // indicating to the spinner that it should not display
+  componentDidMount () {
+    // After main component finishes mounting, wait 500ms
+    // and change "loaded" to true and "startFadeOut" to true.
+    // This will cause the spinner to start fading out.
+    // This setState will call another timeout (750ms later)
+    // to change the loaded to true and fade out to false,
+    // indicating to the spinner that it should not display
 
+    setTimeout(() => {
+      // Indicating spinner to start fading out
+      this.setState({
+        loaded: true,
+        startFadeOut: true
+      }, () => {
+        // Eventually tell spinner to never display
         setTimeout(() => {
-            // Indicating spinner to start fading out
-            this.setState({
-                loaded: true,
-                startFadeOut: true
-            }, () => {
-                // Eventually tell spinner to never display
-                setTimeout(() => {
-                    this.setState({
-                        loaded: true,
-                        startFadeOut: false
-                    })
-                }, 1000)
-            });
-        }, 1000);
-    }
+          this.setState({
+            loaded: true,
+            startFadeOut: false
+          })
+        }, 1000)
+      })
+    }, 1000)
+  }
 
-    render() {
-        return (
-            <div id='Home' style={{ backgroundColor: "rgb(25,25,25)" }}>
-                <Spinner
-                    loaded={this.state.loaded}
-                    startFadeOut={this.state.startFadeOut} />
-                <Helmet>
-                    <title>Koreography</title>
-                    <link rel='icon' href='favicon.ico' />
-                </Helmet>
+  render () {
+    return (
+      <div id='Home' style={{ backgroundColor: 'rgb(25,25,25)' }}>
+        <Spinner
+          loaded={this.state.loaded}
+          startFadeOut={this.state.startFadeOut} />
+        <Helmet>
+          <title>Koreography</title>
+          <link rel='icon' href='favicon.ico' />
+        </Helmet>
 
-                <Header />
-                <Content />
-                <Footer />
-            </div>
-        );
-    }
+        <Header />
+        <Content />
+        <Footer />
+      </div>
+    )
+  }
 }
 
-ReactDOM.render(<Home />, document.getElementById('app'));
+ReactDOM.render(<Home />, document.getElementById('app'))

@@ -1,19 +1,20 @@
-import React from 'react';
+/* eslint-disable react/prop-types */
+import React from 'react'
 
-import spinnerPath from '../assets/spinner.jpg';
+import spinnerPath from '../assets/spinner.jpg'
 
 export default class Spinner extends React.Component {
-  render() {
-    let dontShow = this.props.loaded && !this.props.startFadeOut;
-    let wrapperClasses = ['spinner-wrapper'];
+  render () {
+    const dontShow = this.props.loaded && !this.props.startFadeOut
+    const wrapperClasses = ['spinner-wrapper']
 
     if (this.props.startFadeOut) {
-      wrapperClasses.push('animated');
-      wrapperClasses.push('fadeOut');
+      wrapperClasses.push('animated')
+      wrapperClasses.push('fadeOut')
     }
 
     return (
-      <div style={dontShow ? {display: 'none'} : {}}>
+      <div style={dontShow ? { display: 'none' } : {}}>
         <div className={wrapperClasses.join(' ')}>
           <div className="spinner-container">
             <center>
@@ -26,6 +27,6 @@ export default class Spinner extends React.Component {
           </div>
         </div>
       </div>
-    );
+    )
   }
 }
