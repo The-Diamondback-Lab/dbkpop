@@ -1,6 +1,6 @@
 ﻿#article-content {
     color: rgb(255, 255, 255);
-    font-size: 1em;
+    font-size: 0.9em;
     margin: 0 auto;
     padding: 2em 0;
     background-color: rgb(25, 25, 25);
@@ -77,4 +77,31 @@ p.article-paragraph {
 
 .gallery-wrapper {
     margin: 0 auto;
+}
+
+.awssld {
+    --organic-arrow-thickness: 4px;
+    --organic-arrow-height: 40px;
+    --slider-height-percentage: 60%;
+    --loader-bar-color: #39ff14;
+    --loader-bar-height: 6px;
+    --control-button-width: 10%;
+    --control-button-height: 25%;
+    --control-button-opacity: 0.75;
+    --control-button-hover-opacity: 0.95;
+    --control-button-background: #ffffff00;
+    --transition-bezier: cubic-bezier(0.5, 0.075, 0.25, 0.95);
+    --slider-transition-duration: 575ms;
+    --organic-arrow-color: #ffffff;
+    --organic-arrow-border-radius: 0;
+    --control-bullet-color: #6a6a6a;
+    --control-bullet-active-color: #6a6a6a;
+    --content-background-color: #2f2f2f;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
 }
