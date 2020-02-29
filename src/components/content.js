@@ -135,7 +135,7 @@ export default class Content extends React.Component {
             }
             if (para.match(/^IMAGE::/)) {
                 let imageSrc = para.split('IMAGE::')[1];
-                elems.push(<img src={imageSrc} class="center"/>);
+                elems.push(<img src={imageSrc} className="center"/>);
                 return elems;
             }else if (para.match('YOUTUBE::')) {
                 let youtubeID = para.split('YOUTUBE::')[1];
@@ -166,7 +166,7 @@ export default class Content extends React.Component {
             } else if (para.match(/^[A-Z]+::/)) {
                 // Unhandled directive, skip over
                 return elems;
-            } 
+            }
 
             elems.push(
                 <p
