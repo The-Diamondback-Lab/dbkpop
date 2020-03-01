@@ -2,10 +2,10 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import Helmet from 'react-helmet'
 
-import Spinner from './components/spinner'
-import Header from './components/header'
-import Content from './components/content'
-import Footer from './components/footer'
+import Spinner from './components/Spinner'
+import Header from './components/Header'
+import Content from './components/Content'
+import Footer from './components/Footer'
 
 import './styles/main.css'
 

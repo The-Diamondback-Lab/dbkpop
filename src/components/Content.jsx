@@ -1,6 +1,6 @@
 import React from 'react'
 import YouTube from 'react-youtube-embed'
-import Podcast from './podcast'
+import Podcast from './Podcast'
 import AwesomeSlider from 'react-awesome-slider'
 import 'react-awesome-slider/dist/styles.css'
 import sanitizeHtml from 'sanitize-html'
