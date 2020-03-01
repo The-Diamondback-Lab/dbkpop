@@ -2,9 +2,7 @@ import React from 'react'
 
 export default class Header extends React.Component {
   render () {
-    const sh = window.screen.height
-
-    const s = `<video autoplay muted loop class="header-video" style="height: ${sh}px"><source src="videos/bg-video.mp4"></source></video>`
+    const s = '<video autoplay muted loop class="header-video"><source src="videos/bg-video.mp4"></source></video>'
 
     return (
       <div className='header-bg'>
