@@ -30,7 +30,7 @@ import imageData from '../data/images.json'
  */
 
 export default class Content extends React.Component {
-  constructor (props) {
+  constructor(props) {
     super(props)
 
     const images = imageData.map((filePath) => {
@@ -60,7 +60,7 @@ export default class Content extends React.Component {
    * @param {number} count How many sets to split the images into
    * @returns {string[][]}
    */
-  splitImages (count) {
+  splitImages(count) {
     const { images } = this.state
 
     const sets = []
@@ -82,7 +82,7 @@ export default class Content extends React.Component {
      *
      * @returns {JSX.Element[]}
      */
-  generateContent () {
+  generateContent() {
     const { paragraphs } = this.state
 
     return paragraphs.reduce((elems, para, idx) => {
@@ -128,7 +128,7 @@ export default class Content extends React.Component {
     }, [])
   }
 
-  render () {
+  render() {
     const articleContent = this.generateContent()
 
     return <div id='article-content'>{articleContent}</div>

@@ -4,7 +4,7 @@ import credits from '../data/credits.json'
 import logoPath from '../assets/dbk-logo.png'
 
 export default class Footer extends React.Component {
-  render () {
+  render() {
     return (
       <footer>
         <p className="credits">Credits</p>

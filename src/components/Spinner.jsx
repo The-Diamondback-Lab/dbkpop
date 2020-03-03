@@ -4,7 +4,7 @@ import React from 'react'
 import spinnerPath from '../assets/spinner.jpg'
 
 export default class Spinner extends React.Component {
-  render () {
+  render() {
     const dontShow = this.props.loaded && !this.props.startFadeOut
     const wrapperClasses = ['spinner-wrapper']
 

@@ -2,7 +2,7 @@
 import React from 'react'
 
 export default class Podcast extends React.Component {
-  render () {
+  render() {
     return (
       <iframe
         width='100%'
