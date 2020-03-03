@@ -157,6 +157,11 @@ export default class Content extends React.Component {
           <div data-src={slideshowPic[3]} />
         </AwesomeSlider>)
         return elems
+      } else if (para.match(/^HEADER::/)) {
+        const text = para.split('HEADER::')[1]
+        elems.push(<h3>{text}</h3>)
+
+        return elems
       } else if (para.match(/^[A-Z]+::/)) {
         // Unhandled directive, skip over
         console.warn(`Unknown directive at index ${idx}`)

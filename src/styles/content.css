@@ -1,4 +1,4 @@
-#article-content {
+﻿#article-content {
     color: rgb(255, 255, 255);
     font-size: 0.9em;
     margin: 0 auto;
@@ -22,6 +22,12 @@ p.article-paragraph {
     font-family: 'Georgia', serif;
     margin: 1.5em 0;
     line-height: 1.3;
+}
+
+#article-content > h3 {
+    margin: 0;
+    font-family: 'Solano-Gothic-Bold-Cap';
+    font-size: 2em;
 }
 
 .image-gallery {
