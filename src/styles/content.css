@@ -15,13 +15,13 @@
 @media screen and (min-width: 980px) {
     #article-content {
         width: 70%;
-        
     }
 }
 
 p.article-paragraph {
-    font-family: 'Merriweather', serif;
+    font-family: 'Georgia', serif;
     margin: 1.5em 0;
+    line-height: 1.3;
 }
 
 .image-gallery {
