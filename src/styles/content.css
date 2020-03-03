@@ -6,18 +6,6 @@
   background-color: rgb(25, 25, 25);
 }
 
-/* @media screen and (max-width: 980px) {
-  #article-content {
-    width: 90%;
-  }
-}
-
-@media screen and (min-width: 980px) {
-  #article-content {
-    width: 70%;
-  }
-} */
-
 p.article-paragraph {
   font-family: 'Merriweather', serif;
   margin: 1.5em 0;
