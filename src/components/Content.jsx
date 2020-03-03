@@ -129,15 +129,18 @@ export default class Content extends React.Component {
       if (para.match(/^PODCAST::/)) {
         const podcastSrc = para.split('PODCAST::')[1]
         elems.push(<Podcast key={`podcast-${idx}`} src={podcastSrc} />)
+
         return elems
       }
       if (para.match(/^IMAGE::/)) {
         const imageSrc = para.split('IMAGE::')[1]
         elems.push(<img src={imageSrc} className="center"/>)
+
         return elems
       } else if (para.match(/^YOUTUBE::/)) {
         const youtubeID = para.split('YOUTUBE::')[1]
         elems.push(<YouTube className="youtube-video" id={youtubeID} />)
+
         return elems
       } else if (para.match(/^GALLERY::/)) {
         // Find the gallery index map for this index (if any)
@@ -146,6 +149,7 @@ export default class Content extends React.Component {
         if (galleryIndicesMap) {
           // Found one, return the gallery at index galleryIndicesMap[1]
           elems.push(galleries[galleryIndicesMap[1]])
+
           return elems
         }
       } else if (para.match(/^SLIDER::/)) {
@@ -156,6 +160,7 @@ export default class Content extends React.Component {
           <div data-src={slideshowPic[2]} />
           <div data-src={slideshowPic[3]} />
         </AwesomeSlider>)
+
         return elems
       } else if (para.match(/^HEADER::/)) {
         const text = para.split('HEADER::')[1]
