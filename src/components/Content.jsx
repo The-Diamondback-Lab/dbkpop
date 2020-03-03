@@ -90,8 +90,7 @@ export default class Content extends React.Component {
         const podcastSrc = para.split('PODCAST::')[1]
         elems.push(<Podcast key={`podcast-${idx}`} src={podcastSrc} />)
         return elems
-      }
-      if (para.match(/^IMAGE::/)) {
+      } else if (para.match(/^IMAGE::/)) {
         const imageSrc = para.split('IMAGE::')[1]
         elems.push(<img src={imageSrc} className="center"/>)
         return elems
