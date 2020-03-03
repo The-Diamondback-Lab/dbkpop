@@ -86,8 +86,8 @@ export default class Content extends React.Component {
     const { paragraphs } = this.state
 
     /**
-         * @type {GalleryData}
-         */
+     * @type {GalleryData}
+     */
     let galleryData = { count: 0, indices: [] }
     galleryData = paragraphs.reduce((data, para, idx) => {
       if (para === 'GALLERY::') {
@@ -148,10 +148,6 @@ export default class Content extends React.Component {
           elems.push(galleries[galleryIndicesMap[1]])
           return elems
         }
-      } else if (para.match(/^PERSON::/)) {
-        para = `<i>${para.split('PERSON::')[1]}</i>`
-      } else if (para.match(/^BOLD::/)) {
-        para = `<b>${para.split('BOLD::')[1]}</i>`
       } else if (para.match('SLIDER::')) {
         const slideshowPic = JSON.parse(para.split('SLIDER::')[1])
         elems.push(<AwesomeSlider bullets={false}>
@@ -163,6 +159,7 @@ export default class Content extends React.Component {
         return elems
       } else if (para.match(/^[A-Z]+::/)) {
         // Unhandled directive, skip over
+        console.warn(`Unknown directive at index ${idx}`)
         return elems
       }
 
