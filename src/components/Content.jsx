@@ -41,26 +41,25 @@ export default class Content extends React.Component {
     })
 
     this.splitImages = this.splitImages.bind(this)
-    this.generateGalleries = this.generateGalleries.bind(this)
     this.generateContent = this.generateContent.bind(this)
 
     this.state = {
       /**
-             * @type {string[]}
-             */
+       * @type {string[]}
+       */
       paragraphs: contentData,
       /**
-             * @type {string[]}
-             */
+       * @type {string[]}
+       */
       images: images
     }
   }
 
   /**
-     * Splits this component's state images into sets.
-     * @param {number} count How many sets to split the images into
-     * @returns {string[][]}
-     */
+   * Splits this component's state images into sets.
+   * @param {number} count How many sets to split the images into
+   * @returns {string[][]}
+   */
   splitImages (count) {
     const { images } = this.state
 
@@ -77,52 +76,13 @@ export default class Content extends React.Component {
   }
 
   /**
-     * Generates data for galleries, including a `GalleryData` object and
-     * a list of JSX galleries.
-     *
-     * @returns {GalleryObjects}
-     */
-  generateGalleries () {
-    const { paragraphs } = this.state
-
-    /**
-         * @type {GalleryData}
-         */
-    let galleryData = { count: 0, indices: [] }
-    galleryData = paragraphs.reduce((data, para, idx) => {
-      if (para === 'GALLERY::') {
-        data.indices.push([idx, data.count])
-        data.count++
-      }
-
-      return data
-    }, galleryData)
-
-    const imageSets = this.splitImages(galleryData.count)
-
-    const galleries = imageSets.map((set, idx) => (
-      <div key={`gallery-${idx}`} className='gallery-wrapper'>
-
-      </div>
-    ))
-
-    return {
-      data: galleryData,
-      galleries
-    }
-  }
-
-  /**
-     * Generates all article content given gallery data, galleries themselves,
-     * and any podcasts to embed. If a directive is found but not handled
+     * Generates all article content. If a directive is found but not handled
      * appropriately, then that directive is ignored and not generated in the
      * content.
      *
-     * @param {GalleryData} galleryData
-     * @param {JSX.Element[]} galleries
      * @returns {JSX.Element[]}
      */
-  generateContent (galleryData, galleries) {
+  generateContent () {
     const { paragraphs } = this.state
 
     return paragraphs.reduce((elems, para, idx) => {
@@ -139,15 +99,6 @@ export default class Content extends React.Component {
         const youtubeID = para.split('YOUTUBE::')[1]
         elems.push(<YouTube id={youtubeID} />)
         return elems
-      } else if (para.match(/^GALLERY::/)) {
-        // Find the gallery index map for this index (if any)
-        const galleryIndicesMap = galleryData.indices.find((arr) => arr[0] === idx)
-
-        if (galleryIndicesMap) {
-          // Found one, return the gallery at index galleryIndicesMap[1]
-          elems.push(galleries[galleryIndicesMap[1]])
-          return elems
-        }
       } else if (para.match(/^PERSON::/)) {
         para = `<i>${para.split('PERSON::')[1]}</i>`
       } else if (para.match(/^BOLD::/)) {
@@ -179,8 +130,7 @@ export default class Content extends React.Component {
   }
 
   render () {
-    const galleryObjs = {}
-    const articleContent = this.generateContent(galleryObjs.data, galleryObjs.galleries)
+    const articleContent = this.generateContent()
 
     return <div id='article-content'>{articleContent}</div>
   }
