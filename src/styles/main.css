@@ -1,7 +1,6 @@
 ﻿@import 'animated.css';
 @import 'spinner.css';
 @import 'fonts.css';
-/*@import '../../node_modules/react-image-gallery/styles/css/image-gallery.css';*/
 @import 'header.css';
 @import 'content.css';
 @import 'footer.css';
@@ -10,23 +9,23 @@ html,
 body,
 #__next,
 #home {
-    margin: 0;
-    padding: 0;
-    height: 100%;
+  margin: 0;
+  padding: 0;
+  height: 100%;
 }
 
 ::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
 
 @media screen and (max-width: 980px) {
-    html {
-        font-size: 18px;
-    }
+  html {
+    font-size: 18px;
+  }
 }
 
 @media screen and (min-width: 981px) {
-    html {
-        font-size: 20px;
-    }
+  html {
+    font-size: 20px;
+  }
 }
