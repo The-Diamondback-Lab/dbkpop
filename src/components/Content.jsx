@@ -135,7 +135,7 @@ export default class Content extends React.Component {
         const imageSrc = para.split('IMAGE::')[1]
         elems.push(<img src={imageSrc} className="center"/>)
         return elems
-      } else if (para.match('YOUTUBE::')) {
+      } else if (para.match(/^YOUTUBE::/)) {
         const youtubeID = para.split('YOUTUBE::')[1]
         elems.push(<YouTube id={youtubeID} />)
         return elems
@@ -148,7 +148,7 @@ export default class Content extends React.Component {
           elems.push(galleries[galleryIndicesMap[1]])
           return elems
         }
-      } else if (para.match('SLIDER::')) {
+      } else if (para.match(/^SLIDER::/)) {
         const slideshowPic = JSON.parse(para.split('SLIDER::')[1])
         elems.push(<AwesomeSlider bullets={false}>
           <div data-src={slideshowPic[0]} />
