@@ -1,20 +1,21 @@
 ﻿footer {
-  font-size: 25px;
+  font-size: 1.2em;
   font-family: 'Solano-Gothic-Bold-Cap', sans-serif;
-  padding: 10px;
+  padding: 0.75em;
   color: white;
   background-color: black;
 }
 
-p.credits {
+footer > div.credits > p {
   font-size: 1.5em;
+  margin: 0;
 }
 
 footer > * {
-  margin: 10px;
+  margin: 0.5em;
 }
 
 .footer-logo {
   margin: 0.5em 0;
-  width: 7.5em;
+  height: 1.75em;
 }
