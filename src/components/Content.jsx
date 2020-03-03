@@ -137,7 +137,7 @@ export default class Content extends React.Component {
         return elems
       } else if (para.match(/^YOUTUBE::/)) {
         const youtubeID = para.split('YOUTUBE::')[1]
-        elems.push(<YouTube id={youtubeID} />)
+        elems.push(<YouTube className="youtube-video" id={youtubeID} />)
         return elems
       } else if (para.match(/^GALLERY::/)) {
         // Find the gallery index map for this index (if any)
