@@ -6,7 +6,7 @@
   background-color: rgb(25, 25, 25);
 }
 
-@media screen and (max-width: 980px) {
+/* @media screen and (max-width: 980px) {
   #article-content {
     width: 90%;
   }
@@ -16,7 +16,7 @@
   #article-content {
     width: 70%;
   }
-}
+} */
 
 p.article-paragraph {
   font-family: 'Merriweather', serif;
