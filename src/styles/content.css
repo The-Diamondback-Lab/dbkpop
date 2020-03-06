@@ -37,3 +37,23 @@ p.article-paragraph {
   margin-right: auto;
   width: 50%;
 }
+
+.imagecaption {
+  display: block;
+  margin-left: auto;
+  margin-top: 1em;
+  margin-right: auto;
+  width: 50%;
+  font-style: italic;
+  font-size: 0.9em;
+}
+
+.gallerycaption {
+  display: block;
+  margin-left: auto;
+  margin-top: 1em;
+  margin-right: auto;
+  width: 100%;
+  font-style: italic;
+  font-size: 0.9em;
+}

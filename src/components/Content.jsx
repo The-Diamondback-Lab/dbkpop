@@ -95,8 +95,14 @@ export default class Content extends React.Component {
         elems.push(<img src={imageSrc} className="center"/>)
         return elems
       } else if (para.match('YOUTUBE::')) {
-        const youtubeID = para.split('YOUTUBE::')[1]
-        elems.push(<YouTube id={youtubeID} />)
+          const youtubeID = para.split('YOUTUBE::')[1]
+          elems.push(<YouTube id={youtubeID} />)
+          return elems
+      } else if (para.match(/^IMAGECAPTION::/)) {
+        elems.push(<div className="imagecaption">{para.split('IMAGECAPTION::')[1]}</div>)
+        return elems
+      } else if (para.match(/^GALLERYCAPTION::/)) {
+        elems.push(<div className="gallerycaption">{para.split('GALLERYCAPTION::')[1]}</div>)
         return elems
       } else if (para.match(/^PERSON::/)) {
         para = `<i>${para.split('PERSON::')[1]}</i>`
