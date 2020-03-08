@@ -86,8 +86,8 @@ export default class Content extends React.Component {
     const { paragraphs } = this.state
 
     /**
-         * @type {GalleryData}
-         */
+     * @type {GalleryData}
+     */
     let galleryData = { count: 0, indices: [] }
     galleryData = paragraphs.reduce((data, para, idx) => {
       if (para === 'GALLERY::') {
@@ -129,16 +129,18 @@ export default class Content extends React.Component {
       if (para.match(/^PODCAST::/)) {
         const podcastSrc = para.split('PODCAST::')[1]
         elems.push(<Podcast key={`podcast-${idx}`} src={podcastSrc} />)
+
         return elems
       }
       if (para.match(/^IMAGE::/)) {
         const imageSrc = para.split('IMAGE::')[1]
         elems.push(<img src={imageSrc} className="center"/>)
+
         return elems
-      } else if (para.match('YOUTUBE::')) {
-          const youtubeID = para.split('YOUTUBE::')[1]
-          elems.push(<YouTube id={youtubeID} />)
-          return elems
+      } else if (para.match(/^YOUTUBE::/)) {
+        const youtubeID = para.split('YOUTUBE::')[1]
+        elems.push(<YouTube className="youtube-video" id={youtubeID} />)
+        return elems
       } else if (para.match(/^IMAGECAPTION::/)) {
         elems.push(<div className="imagecaption">{para.split('IMAGECAPTION::')[1]}</div>)
         return elems
@@ -152,13 +154,10 @@ export default class Content extends React.Component {
         if (galleryIndicesMap) {
           // Found one, return the gallery at index galleryIndicesMap[1]
           elems.push(galleries[galleryIndicesMap[1]])
+
           return elems
         }
-      } else if (para.match(/^PERSON::/)) {
-        para = `<i>${para.split('PERSON::')[1]}</i>`
-      } else if (para.match(/^BOLD::/)) {
-        para = `<b>${para.split('BOLD::')[1]}</i>`
-      } else if (para.match('SLIDER::')) {
+      } else if (para.match(/^SLIDER::/)) {
         const slideshowPic = JSON.parse(para.split('SLIDER::')[1])
         elems.push(<AwesomeSlider bullets={false}>
           <div data-src={slideshowPic[0]} />
@@ -166,9 +165,16 @@ export default class Content extends React.Component {
           <div data-src={slideshowPic[2]} />
           <div data-src={slideshowPic[3]} />
         </AwesomeSlider>)
+
+        return elems
+      } else if (para.match(/^HEADER::/)) {
+        const text = para.split('HEADER::')[1]
+        elems.push(<h3>{text}</h3>)
+
         return elems
       } else if (para.match(/^[A-Z]+::/)) {
         // Unhandled directive, skip over
+        console.warn(`Unknown directive at index ${idx}`)
         return elems
       }
 
