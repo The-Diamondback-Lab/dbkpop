@@ -10,12 +10,12 @@ import Footer from './components/Footer'
 import './styles/main.css'
 
 class Home extends React.Component {
-  constructor () {
+  constructor() {
     super()
     this.state = { loaded: false, startFadeOut: false }
   }
 
-  componentDidMount () {
+  componentDidMount() {
     // After main component finishes mounting, wait 500ms
     // and change "loaded" to true and "startFadeOut" to true.
     // This will cause the spinner to start fading out.
@@ -40,9 +40,9 @@ class Home extends React.Component {
     }, 1000)
   }
 
-  render () {
+  render() {
     return (
-      <div id='Home' style={{ backgroundColor: 'rgb(25,25,25)' }}>
+      <div id='Home' style={{ backgroundColor: 'rgb(25, 25, 25)' }}>
         <Spinner
           loaded={this.state.loaded}
           startFadeOut={this.state.startFadeOut} />

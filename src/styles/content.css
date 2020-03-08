@@ -6,18 +6,6 @@
   background-color: rgb(25, 25, 25);
 }
 
-@media screen and (max-width: 980px) {
-  #article-content {
-    width: 90%;
-  }
-}
-
-@media screen and (min-width: 980px) {
-  #article-content {
-    width: 70%;
-  }
-}
-
 p.article-paragraph {
   font-family: 'Georgia', serif;
   margin: 1.5em 0;
@@ -26,67 +14,12 @@ p.article-paragraph {
 
 #article-content > h3 {
   margin: 0;
-  font-family: 'Solano-Gothic-Bold-Cap';
+  font-family: 'Solano-Gothic-Bold-Cap', sans-serif;
   font-size: 2em;
-}
-
-.image-gallery {
-  width: 100%;
-  margin: 1.5em 0;
-}
-
-.image-gallery-index {
-  font-family: 'Solano-Gothic-Light-SC';
-}
-
-.image-gallery-image {
-  background-color: black;
-}
-
-.image-gallery-slide img {
-  width: 100%;
-  height: 400px;
-  object-fit: contain;
-}
-
-.image-gallery-thumbnail-inner img {
-  width: 100%;
-  height: 100px;
-  object-fit: contain;
 }
 
 .youtube-video {
   margin: 1.5em 0;
-}
-
-@media screen and (max-width: 678px) {
-  .gallery-wrapper {
-    width: 100%;
-  }
-}
-
-@media screen and (max-width: 980px) {
-  .gallery-wrapper {
-    width: 85%;
-  }
-}
-
-@media screen and (min-width: 981px) {
-  .gallery-wrapper {
-    width: 85%;
-  }
-
-  .image-gallery-slide img {
-    height: 720px;
-  }
-
-  .image-gallery-thumbnail-inner img {
-    height: 150px;
-  }
-}
-
-.gallery-wrapper {
-  margin: 0 auto;
 }
 
 .awssld {
@@ -99,17 +32,18 @@ p.article-paragraph {
   --control-button-height: 25%;
   --control-button-opacity: 0.75;
   --control-button-hover-opacity: 0.95;
-  --control-button-background: #ffffff00;
+  --control-button-background: #fff0;
   --transition-bezier: cubic-bezier(0.5, 0.075, 0.25, 0.95);
   --slider-transition-duration: 500ms;
-  --organic-arrow-color: #ffffff;
+  --organic-arrow-color: #fff;
   --organic-arrow-border-radius: 0;
   --control-bullet-color: #6a6a6a;
   --control-bullet-active-color: #6a6a6a;
   --content-background-color: #2f2f2f;
 }
 
-.awssld__controls__arrow-left, .awssld__controls__arrow-right {
+.awssld__controls__arrow-left,
+.awssld__controls__arrow-right {
   transition-delay: 0s;
   transition-duration: 0.1s;
   transition-timing-function: linear;
@@ -129,7 +63,7 @@ p.article-paragraph {
   margin-right: auto;
   width: 50%;
   font-style: italic;
-  font-size: .9em;
+  font-size: 0.9em;
 }
 
 .gallerycaption {
@@ -139,5 +73,5 @@ p.article-paragraph {
   margin-right: auto;
   width: 100%;
   font-style: italic;
-  font-size: .9em;
+  font-size: 0.9em;
 }

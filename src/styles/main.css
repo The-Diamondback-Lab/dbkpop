@@ -1,28 +1,51 @@
 ﻿@import 'animated.css';
 @import 'spinner.css';
 @import 'fonts.css';
-/*@import '../../node_modules/react-image-gallery/styles/css/image-gallery.css';*/
 @import 'header.css';
 @import 'content.css';
 @import 'footer.css';
 
 html,
-body,
-#__next,
-#home {
-    margin: 0;
-    padding: 0;
-    height: 100%;
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
 }
 
-@media screen and (max-width: 980px) {
-    html {
-        font-size: 18px;
-    }
+body {
+  font-size: 34px;
 }
 
-@media screen and (min-width: 981px) {
-    html {
-        font-size: 20px;
-    }
+::-webkit-scrollbar {
+  display: none;
+}
+
+#article-content {
+  width: 80%;
+}
+
+/* Tablets */
+@media screen and (min-device-width: 768px) {
+  body {
+    font-size: 24px;
+  }
+
+  #article-content {
+    width: 75%;
+  }
+
+  .footer-logo {
+    height: 1.4em;
+  }
+}
+
+/* Laptops/Desktops */
+@media screen and (min-device-width: 1024px) {
+  body {
+    font-size: 20px;
+  }
+
+  #article-content {
+    width: 70%;
+  }
 }
