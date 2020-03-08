@@ -15,6 +15,9 @@
     "sanitize-html": "^1.21.1"
   },
   "scripts": {
+    "lint:eslint": "eslint \"**/*.js\" \"**/*.jsx\"",
+    "lint:stylelint": "stylelint \"**/*.css\"",
+    "lint": "run-s lint:eslint lint:stylelint",
     "start": "react-scripts start",
     "build": "react-scripts build"
   },
