@@ -160,10 +160,7 @@ export default class Content extends React.Component {
       } else if (para.match(/^SLIDER::/)) {
         const slideshowPic = JSON.parse(para.split('SLIDER::')[1])
         elems.push(<AwesomeSlider bullets={false}>
-          <div data-src={slideshowPic[0]} />
-          <div data-src={slideshowPic[1]} />
-          <div data-src={slideshowPic[2]} />
-          <div data-src={slideshowPic[3]} />
+          {slideshowPic.map((picPath, picIdx) => <div key={`slider-${idx}-${picIdx}`} data-src={picPath}></div>)}
         </AwesomeSlider>)
 
         return elems
