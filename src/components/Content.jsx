@@ -89,7 +89,6 @@ export default class Content extends React.Component {
       if (para.match(/^PODCAST::/)) {
         const podcastSrc = para.split('PODCAST::')[1]
         elems.push(<Podcast key={`podcast-${idx}`} src={podcastSrc} />)
-
         return elems
       } else if (para.match(/^IMAGE::/)) {
         const imageSrc = para.split('IMAGE::')[1]
@@ -107,12 +106,10 @@ export default class Content extends React.Component {
         elems.push(<AwesomeSlider bullets={false}>
           {slideshowPic.map((picPath, picIdx) => <div key={`slider-${idx}-${picIdx}`} data-src={picPath}></div>)}
         </AwesomeSlider>)
-
         return elems
       } else if (para.match(/^HEADER::/)) {
         const text = para.split('HEADER::')[1]
         elems.push(<h3>{text}</h3>)
-
         return elems
       } else if (para.match(/^[A-Z]+::/)) {
         // Unhandled directive, skip over
