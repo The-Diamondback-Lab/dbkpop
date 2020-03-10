@@ -45,24 +45,11 @@ p.article-paragraph {
   transition-timing-function: linear;
 }
 
-.center {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
+.standalone-img {
+  width: 100%;
 }
 
-.imagecaption {
-  display: block;
-  margin-left: auto;
-  margin-top: 1em;
-  margin-right: auto;
-  width: 50%;
-  font-style: italic;
-  font-size: 0.9em;
-}
-
-.gallerycaption {
+.caption {
   display: block;
   margin-left: auto;
   margin-top: 1em;
