@@ -4,7 +4,7 @@ import React from 'react'
 import spinnerPath from '../assets/spinner.jpg'
 
 export default class Spinner extends React.Component {
-  render () {
+  render() {
     const dontShow = this.props.loaded && !this.props.startFadeOut
     const wrapperClasses = ['spinner-wrapper']
 
@@ -20,7 +20,7 @@ export default class Spinner extends React.Component {
             <center>
               <img className="spinner-image"
                 src={spinnerPath}
-                alt="A spinner animation"
+                alt="A loading animation"
               />
               <div className="preload"> <span></span> <span></span> <span></span></div>
             </center>
