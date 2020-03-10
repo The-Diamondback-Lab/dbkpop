@@ -49,7 +49,11 @@ export default class Content extends React.Component {
     const { paragraphs } = this.state
 
     return paragraphs.reduce((elems, para, idx) => {
-      if (para.match(/^PODCAST::/)) {
+      if (para.match(/^BYLINE::/)) {
+        const bylineText = para.split('BYLINE::')[1]
+        elems.push(<span key={`gc-byline-${idx}`} className='byline'>{bylineText}</span>)
+        return elems
+      } else if (para.match(/^PODCAST::/)) {
         const podcastSrc = para.split('PODCAST::')[1]
         elems.push(<Podcast key={`gc-podcast-${idx}`} src={podcastSrc} />)
         return elems

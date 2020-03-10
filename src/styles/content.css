@@ -1,4 +1,4 @@
-#article-content {
+﻿#article-content {
   color: rgb(255, 255, 255);
   font-size: 0.9em;
   margin: 0 auto;
@@ -62,4 +62,10 @@ p.article-paragraph {
   width: 100%;
   font-style: italic;
   font-size: 0.9em;
+}
+
+.byline {
+  margin: 0;
+  font-family: 'Solano-Gothic-Bold-Cap', sans-serif;
+  font-size: 1.5em;
 }
