@@ -57,6 +57,10 @@ export default class Content extends React.Component {
         const imageSrc = para.split('IMAGE::')[1]
         elems.push(<img key={`gc-img-${idx}`} src={imageSrc} className="standalone-img" />)
         return elems
+      } else if (para.match(/^VIDEO::/)) {
+        const videoSrc = para.split('VIDEO::')[1]
+        elems.push(<video key={`gc-video-${idx}`} src={videoSrc} preload='metadata' controls></video>)
+        return elems
       } else if (para.match(/^YOUTUBE::/)) {
         const youtubeID = para.split('YOUTUBE::')[1]
         elems.push(<YouTube key={`gc-youtube-${idx}`} className="youtube-video" id={youtubeID} />)
