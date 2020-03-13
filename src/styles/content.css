@@ -22,7 +22,7 @@ p.article-paragraph {
   --organic-arrow-thickness: 4px;
   --organic-arrow-height: 40px;
   --slider-height-percentage: 60%;
-  --loader-bar-color: rgba(255, 255, 255, 0);
+  --loader-bar-color: rgba(255, 255, 255, 0.5);
   --loader-bar-height: 6px;
   --control-button-width: 10%;
   --control-button-height: 25%;
@@ -41,8 +41,8 @@ p.article-paragraph {
 .awssld__controls__arrow-left,
 .awssld__controls__arrow-right {
   transition-delay: 0s;
-  transition-duration: 0.1s;
-  transition-timing-function: linear;
+  transition-duration: 0.175s;
+  transition-timing-function: ease-in-out;
 }
 
 #article-content > video {
